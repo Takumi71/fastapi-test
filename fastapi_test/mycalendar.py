@@ -3,8 +3,6 @@ import calendar
 from datetime import datetime  # これもあとで使う
 
 
-
-
 class MyCalendar(calendar.LocaleHTMLCalendar):
     # ==== ここで親クラスの関数を自分好みに書き換えていく ==== #
 
@@ -29,8 +27,6 @@ class MyCalendar(calendar.LocaleHTMLCalendar):
 
 
     def formatweek(self, theweek,theyear,themonth):
-        # theyear=2022
-        # themonth = 5
         """
         オーバーライド (引数を変えるのはPythonでは多分非推奨)
         引数で year と month を渡すようにした。
@@ -50,9 +46,9 @@ class MyCalendar(calendar.LocaleHTMLCalendar):
    
     def formatday(self, day, weekday,theyear, themonth):
         """
-    オーバーライド (引数を変えるのはPythonでは多分非推奨)
-    引数で year と month を渡すようにした。
-    """
+        オーバーライド (引数を変えるのはPythonでは多分非推奨)
+        引数で year と month を渡すようにした。
+        """
         
         if day == 0:
             return '<td style="background-color: #eeeeee">&nbsp;</td>'  # 空白
@@ -73,12 +69,11 @@ class MyCalendar(calendar.LocaleHTMLCalendar):
                 else:  # これからの予定
                     highlight = 'bg-warning'
             return html.format(  # url を /todo/{username}/year/month/day に
-                url='/todo/{}/{}/{}/{}'.format(self.username,
-                                            theyear, themonth, day),
-                text=text,
-                day=day,
-                highlight=highlight)
+                               url='/todo/{}/{}/{}/{}'.format(self.username,theyear, themonth, day),
+                               text=text,
+                               day=day,
+                               highlight=highlight)
 
-    pass
+    
 
 
