@@ -1,0 +1,29 @@
+
+
+.text{
+    text-align: center;
+    padding: 200px 0px;
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    
+}
+
+.home_btm {
+    display: inline-block;
+    text-decoration: none;
+    color: #d86666;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    border-radius: 50%;
+    border: double 4px #d86666;
+    text-align: center;
+    overflow: hidden;
+    transition: .6s;
+  }
+  
+  .home_btm:hover {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }

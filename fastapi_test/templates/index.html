@@ -1,18 +1,72 @@
+
 {% extends "layout.html" %}
+
 {% block content %}
-<br>
-<div class="row">
-    <div class="col-md-10">
-        <h1>Welcome to Simple toDo application</h1>
-    </div>
-    <div class="col-md-2">
-        <a href="/admin" class="btn btn-primary">Login</a>
-        <a href="/register" class="btn btn-primary">sign up</a>
+<head>
+    
+    <style type="text/css">
+        @charset "utf-8";
+        body{
+            animation: bgchange 20s ease infinite;/*変化の時間を変更したい場合は20sの部分を好きな時間に変更*/
+        }
+        @keyframes bgchange{
+            0% { background-color: #c0fc8b; }
+            20% { background-color: #e6f998; }
+            40% { background-color: #c5fc66; }
+            60% { background-color: #5df85a; }
+            80% { background-color: #6effcc; }
+            100% { background-color: #9af96e; }
+        }
+        .text{
+            text-align: center;
+            padding: 30px 0px;
+            width: 90%;
+            font-size: 35px;
+            position: absolute;
+        }
+        .home_btm {
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+            width: 150px;
+            height: 150px;
+            line-height: 120px;
+            border-radius: 70%;
+            border: double 6px #ff068b;
+            text-align: center;
+            overflow: hidden;
+            transition: .6s;
+        }
+        .home_btm:hover {
+            -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+        }
+        .hr1 {
+            position: relative;
+            height: 3px;
+            border-width: 0;
+            background-color: #00bcd4;
+            background-image: -webkit-linear-gradient( 135deg, #FD6585 10%, #0D25B9 100%);
+            background-image: linear-gradient( 135deg, #FD6585 10%, #0D25B9 100%);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class ="index">
+        <div class ="text">
+            <h1>ToDo app</h1><hr class="hr1">
+            <br>
+            <br>
+            <div class="home_btm">
+            <a href="/admin">Login</a><br><br>
+            </div>
+            <div class="home_btm">
+            <a href="/register">sign up</a>
+            </div>
+        </div>
     </div>
     
-</div>
-
-<hr>
-<p>This is a simple toDo application powered by <b>FastAPI</b>!</p>
+</body>
 
 {% endblock %}
